@@ -1,6 +1,6 @@
 use std::{
     env, fs,
-    io::{self, BufRead},
+    io::{self, BufRead, Write},
     process::exit,
 };
 fn run(_contents: &str) -> Result<(), String> {
@@ -17,6 +17,7 @@ fn run_prompt() -> Result<(), String> {
     print!("> ");
     let mut buffer = String::new();
     let stdin = io::stdin();
+    io::stdout().flush();
     let mut handle = stdin.lock();
     match handle.read_line(&mut buffer) {
         Ok(_) => (),
