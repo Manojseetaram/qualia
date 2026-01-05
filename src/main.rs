@@ -17,7 +17,7 @@ fn run_prompt() -> Result<(), String> {
     print!("> ");
     let mut buffer = String::new();
     let stdin = io::stdin();
-    println!("{}", stdin);
+    println!("{:?}", stdin);
     io::stdout().flush();
     let mut handle = stdin.lock();
     match handle.read_line(&mut buffer) {
