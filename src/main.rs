@@ -1,6 +1,6 @@
 use std::{
     env, fs,
-    io::{self, BufRead, Read, Write},
+    io::{self, BufRead, Write},
     process::exit,
 };
 fn run(_contents: &str) -> Result<(), String> {
