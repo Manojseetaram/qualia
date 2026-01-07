@@ -1,4 +1,5 @@
 use std::{
+    arch::x86_64::CpuidResult,
     env, fs,
     io::{self, BufRead, Write},
     process::exit,
@@ -27,11 +28,12 @@ fn run_prompt() -> Result<(), String> {
     println!("You wrote : {}", buffer);
     Ok(())
 }
+fn run_code() -> Result<(), String> {}
 fn main() {
     let args: Vec<String> = env::args().collect();
     if args.len() > 2 {
         println!("Usage : jlox [script]");
-        println!("...");
+
         exit(64);
     } else if args.len() == 2 {
         match run_file(&args[1]) {
